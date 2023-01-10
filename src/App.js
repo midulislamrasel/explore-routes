@@ -7,6 +7,7 @@ import Main from './Leout/Main';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Order from './Components/Order/Order';
+import UserDitels from './Components/UserDitels/UserDitels';
 
 function App() {
   const router = createBrowserRouter([
@@ -16,7 +17,17 @@ function App() {
       children: [
         {
           path: 'home',
-          element: <Home></Home>
+          element: <Home></Home>,
+          loader:() => {
+            return fetch ('https://jsonplaceholder.typicode.com/users')
+          },
+        },
+        {
+          path: '/user/:id',
+          element: <UserDitels></UserDitels>,
+          loader: async ({params}) => {
+            return fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+          },
         },
         {
           path: 'about',
@@ -40,6 +51,10 @@ function App() {
           element: <Order></Order>
         }
       ]
+    },
+    {
+      path: '*',
+      element: <div> This page is note found</div>
     }
   ])
 
