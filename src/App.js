@@ -24,10 +24,10 @@ function App() {
         },
         {
           path: '/user/:id',
-          element: <UserDitels></UserDitels>,
           loader: async ({params}) => {
-            return fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+            return fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
           },
+          element: <UserDitels></UserDitels>,
         },
         {
           path: 'about',

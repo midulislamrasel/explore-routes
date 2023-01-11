@@ -6,7 +6,7 @@ const User = (props) => {
     return (
         <div className='userInformeson'>
             <h2>Name {name}</h2>
-            <h3>User Name <Link to = {`/user/ ${id}`}>{username}</Link> </h3>
+            <h3>User Name <Link to = {`/user/${id}`}>{username}</Link> </h3>
         </div>
     );
 };
