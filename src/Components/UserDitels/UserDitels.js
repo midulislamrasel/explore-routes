@@ -2,7 +2,7 @@ import React from 'react';
 import './userstyle.css'
 import { useLoaderData } from 'react-router-dom';
 
-const UserDitels = (params) => {
+const UserDitels = () => {
     const infomeson = useLoaderData();
     console.log(infomeson)
     return (
